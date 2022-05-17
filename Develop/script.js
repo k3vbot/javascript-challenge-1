@@ -5,23 +5,36 @@ const key_strings = {
   lowercase : 'abcdefghijklmnopqrstuvwxyz',
   uppercase : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   number : '1234567890',
-  specialchar : '!@#$%^&*',
-}
+  special : '!@#$%^&*',
+};
 
 // Write password to the #password input
 function writePassword() {
+  var passwordCharSet = ""
   var pswdLength = prompt("Please enter desired password length (8-128 Characters)");
-  if (pswdLength <= 7){
-    alert("Too Weak! Please enter a number between 8 and 128");
-  }
-  else if (pswdLength > 128){
-    alert("Too Long! Please enter a number between 8 and 128") 
+  var lowerCase = confirm("Should the password contain lowercase characters?");
+  if (lowerCase) {
+    passwordCharSet += key_strings.lowercase;
+  };
+  var upperCase = confirm("Should the password contain upper case characters?");
+  if (upperCase) {
+    passwordCharSet += key_strings.uppercase;
+  };
+  var numberChar = confirm("Should the password contain numbers?")
+  if (numberChar) {
+    passwordCharSet += key_strings.number;
+  };
+  var specialChar = confirm("Should the password contain special characters?");
+  if (specialChar) {
+    passwordCharSet += key_strings.special
   };
 
-  var lowerCase = confirm("Should the password contain lowercase characters?");
-  var upperCase = confirm("Should the password contain upper case characters?");
-  var numberChar = confirm("Should the password contain numbers?")
-  var specialChar = confirm("Should the password contain special characters?");
+  var password = ""
+  for (let i = 0; i < pswdLength; i++) {
+    password += passwordCharSet[Math.floor(Math.random()*passwordCharSet.length)]
+  }
+  return password;
+
   
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
