@@ -29,20 +29,22 @@ function writePassword() {
     passwordCharSet += key_strings.special
   };
 
-  var password = ""
+  var passwordReq = ""
   for (let i = 0; i < pswdLength; i++) {
-    password += passwordCharSet[Math.floor(Math.random()*passwordCharSet.length)]
+    passwordReq += passwordCharSet[Math.floor(Math.random()*passwordCharSet.length)]
   }
-  return password;
-
   
-  var password = generatePassword();
+  console.log(passwordReq);
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
  
   passwordText.value = password;
 
+  return passwordReq;
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
