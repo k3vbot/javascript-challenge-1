@@ -1,5 +1,10 @@
 # 03 JavaScript: Password Generator
 
+In this assignment I created a password generator that takes in user inputs and uses math.random to generate a password that it presents to the user. 
+
+
+
+
 ## Your Task
 
 This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.

@@ -34,12 +34,10 @@ function writePassword() {
     passwordReq += passwordCharSet[Math.floor(Math.random()*passwordCharSet.length)]
   }
   
-  console.log(passwordReq);
-  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
  
-  passwordText.value = password;
+  passwordText.value = passwordReq;
 
   return passwordReq;
 }
